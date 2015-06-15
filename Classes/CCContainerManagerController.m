@@ -176,7 +176,9 @@
 
 #pragma mark - CCContainer Delegate
 
-
+- (BOOL)customContainerViewController:(CCContainerViewController *)container shouldSelectViewController:(UIViewController *)viewController {
+    return [self shouldSelectViewController:viewController];
+}
 
 #pragma mark - UITabBarController Delegate
 
