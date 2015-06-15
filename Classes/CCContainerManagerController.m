@@ -164,10 +164,14 @@
 }
 
 - (BOOL)shouldSelectViewController:(UIViewController *)viewController {
-
     if (_delegate && [_delegate respondsToSelector:@selector(containerManager:shouldSelectViewController:)])
         return [_delegate containerManager:self shouldSelectViewController:viewController];
     return YES;
+}
+
+- (void)didSelectViewwController:(UIViewController *)viewController {
+    if (_delegate && [_delegate respondsToSelector:@selector(containerManager:didSelectViewController:)])
+        [_delegate containerManager:self didSelectViewController:viewController];
 }
 
 #pragma mark - CCContainer Delegate
@@ -181,7 +185,7 @@
 }
 
 - (void)tabBarController:(nonnull UITabBarController *)tabBarController didSelectViewController:(nonnull UIViewController *)viewController {
-    
+    [self didSelectViewwController:viewController];
 }
 
 @end
