@@ -55,4 +55,11 @@
  */
 - (instancetype)initWithTraitCollection:(UITraitCollection *)traitCollection NS_AVAILABLE_IOS(8_0);
 
+/**
+ *  If UITabBarController is showing, this method will move the line above the tabBar at the selected item
+ *
+ *  @param animate will animate if YES
+ */
+- (void)moveLineToSelectedTabBarItem:(BOOL)animate;
+
 @end

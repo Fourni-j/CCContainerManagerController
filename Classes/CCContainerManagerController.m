@@ -112,6 +112,14 @@
     
 }
 
+- (void)moveLineToSelectedTabBarItem:(BOOL)animate
+{
+    if([self.actualController isKindOfClass:[CCTabBarController class]])
+    {
+        [(CCTabBarController *)self.actualController moveLineToSelectedTabBarItem:animate];
+    }
+}
+
 - (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
     [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
     
