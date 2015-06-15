@@ -42,6 +42,7 @@
     {
         CCContainerViewController *container = [[CCContainerViewController alloc] init];
         container.delegate = self;
+        if(_containerStyle) container.containerStyle = _containerStyle;
         [container setViewControllers:viewControllers];
         [container setSelectedIndex:index];
         [container setButtonSelectedColor:self.selectedLineColor];

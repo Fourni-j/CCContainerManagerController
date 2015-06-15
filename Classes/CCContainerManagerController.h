@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCContainerStyle.h"
 
+@class CCContainerStyle;
 @class CCContainerManagerController;
 
 @protocol CCContainerManagerDelegate <NSObject>
