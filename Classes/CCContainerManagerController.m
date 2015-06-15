@@ -1,5 +1,5 @@
 //
-//  CCContainerManager.m
+//  CCContainerManagerController.m
 //  CCContainerMultitask
 //
 //  Created by Charles-Adrien Fournier on 12/06/15.
