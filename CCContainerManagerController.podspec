@@ -15,5 +15,4 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "Masonry", "~> 0.6.1"
-  s.dependency "CCContainerViewController", :git => 'https://github.com/Fourni-j/CCContainerViewController.git'
 end
