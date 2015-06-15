@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class CCContainerStyle;
+#import "CCContainerViewController.h"
 @class CCContainerManagerController;
 
 @protocol CCContainerManagerDelegate <NSObject>
@@ -76,5 +75,15 @@
  *  @return frame of the bar item
  */
 - (CGRect)frameFormBarItemAtIndex:(NSInteger)index;
+
+/**
+ *  Return the button's view at the specified index
+ *  usefull to show a tuto
+ *
+ *  @param index index of the tab
+ *
+ *  @return the view
+ */
+- (UIView *)viewForTabAtIndex:(NSUInteger)index;
 
 @end

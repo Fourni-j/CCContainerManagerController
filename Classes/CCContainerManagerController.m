@@ -45,7 +45,6 @@
         if(_containerStyle) container.containerStyle = _containerStyle;
         [container setViewControllers:viewControllers];
         [container setSelectedIndex:index];
-        [container setButtonSelectedColor:self.selectedLineColor];
         _actualController = container;
     }
 }
@@ -130,6 +129,18 @@
     else
     {
         return [(CCContainerViewController *)self.actualController frameForTabBarItemAtIndex:index];
+    }
+}
+
+- (UIView *)viewForTabAtIndex:(NSUInteger)index
+{
+    if([self.actualController isKindOfClass:[CCTabBarController class]])
+    {
+        return [(CCTabBarController *)self.actualController viewForTabAtIndex:index];
+    }
+    else
+    {
+        return [(CCContainerViewController *)self.actualController viewForTabAtIndex:index];
     }
 }
 
