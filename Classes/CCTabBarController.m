@@ -21,7 +21,6 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         self.selectedLineColor = [UIColor redColor];
-        NSLog(@"Init color %@", self.selectedLineColor);
     }
     return self;
 }
@@ -30,7 +29,6 @@
     [super viewDidLoad];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -1 / [UIScreen mainScreen].scale, self.tabBar.bounds.size.width, 1)];
-    NSLog(@"Color %@", self.selectedLineColor);
     view.backgroundColor = self.selectedLineColor;
     view.hidden = YES;
     [self.tabBar addSubview:view];
