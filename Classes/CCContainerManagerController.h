@@ -48,6 +48,6 @@
  *
  *  @return A newly initialized CCContainerManagerController object
  */
-- (instancetype)initWithTraitCollection:(UITraitCollection *)traitCollection;
+- (instancetype)initWithTraitCollection:(UITraitCollection *)traitCollection NS_AVAILABLE_IOS(8_0);
 
 @end

@@ -52,12 +52,13 @@
     else {
         containerManagerController = [[CCContainerManagerController alloc] initWithTraitCollection:self.traitCollection];
     }
-    
+    [containerManagerController setSelectedLineColor:[UIColor blueColor]];
     [containerManagerController setViewControllers:[[NSArray alloc] initWithObjects:vc1, vc2, vc3, nil]];
     [containerManagerController setSelectedIndex:0];
         
     [self addChildViewController:containerManagerController];
     [self.view addSubview:containerManagerController.view];
+    
 }
 
 - (void)didReceiveMemoryWarning {
