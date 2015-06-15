@@ -225,9 +225,6 @@
 
     if (_actualController && [_actualController isKindOfClass:[CCTabBarController class]])
         [(CCTabBarController *)_actualController setSelectedLineColor:_selectedLineColor];
-    else if (_actualController && [_actualController isKindOfClass:[CCContainerViewController class]])
-        [(CCContainerViewController *)_actualController setButtonSelectedColor:_selectedLineColor];
-
 }
 
 - (BOOL)shouldSelectViewController:(UIViewController *)viewController {
