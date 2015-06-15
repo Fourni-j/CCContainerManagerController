@@ -157,6 +157,26 @@
     }
 }
 
+- (UIViewController *)selectedViewController
+{
+    if ([self.actualController isKindOfClass:[UITabBarController class]])
+    {
+        return ((CCTabBarController *)self.actualController).selectedViewController;
+    }
+    else
+    {
+        return ((CCContainerViewController *)self.actualController).selectedViewController;
+    }
+}
+
+- (void)setSelectedViewController:(UIViewController *)selectedViewController
+{
+    if([self.viewControllers containsObject:selectedViewController])
+    {
+        self.selectedIndex = [self.viewControllers indexOfObject:selectedViewController];
+    }
+}
+
 - (void)setViewControllers:(NSArray *)viewControllers {
     if ([self.actualController isKindOfClass:[CCTabBarController class]])
     {

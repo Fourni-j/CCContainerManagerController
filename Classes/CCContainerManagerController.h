@@ -32,6 +32,11 @@
 @property (nonatomic) NSUInteger selectedIndex;
 
 /**
+ *  The current view controller on screen
+ */
+@property (nonatomic) UIViewController *selectedViewController;
+
+/**
  *  The color of the selection line on tab bar
  */
 @property (nonatomic, strong) UIColor *selectedLineColor;
