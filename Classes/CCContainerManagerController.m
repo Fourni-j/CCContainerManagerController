@@ -32,6 +32,7 @@
     {
         CCTabBarController *tabBar = [[CCTabBarController alloc] init];
         tabBar.delegate = self;
+        [tabBar setSelectedLineColor:self.selectedLineColor];
         [tabBar setViewControllers:viewControllers];
         [tabBar setSelectedIndex:index];
         [tabBar moveLineToSelectedTabBarItem:NO];
@@ -43,6 +44,7 @@
         container.delegate = self;
         [container setViewControllers:viewControllers];
         [container setSelectedIndex:index];
+        [container setButtonSelectedColor:self.selectedLineColor];
         _actualController = container;
     }
 }
@@ -70,9 +72,9 @@
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-
+        
         _isCompact = (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad);
-    
+        
     }
     return self;
 }
@@ -95,6 +97,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (!self.selectedLineColor)
+        self.selectedLineColor = [UIColor redColor];
     
     if (!self.actualController)
         return;
@@ -161,6 +166,16 @@
     {
         ((CCContainerViewController *)self.actualController).viewControllers = viewControllers;
     }
+}
+
+- (void)setSelectedLineColor:(UIColor *)selectedLineColor {
+    _selectedLineColor = selectedLineColor;
+
+    if (_actualController && [_actualController isKindOfClass:[CCTabBarController class]])
+        [(CCTabBarController *)_actualController setSelectedLineColor:_selectedLineColor];
+    else if (_actualController && [_actualController isKindOfClass:[CCContainerViewController class]])
+        [(CCContainerViewController *)_actualController setButtonSelectedColor:_selectedLineColor];
+
 }
 
 - (BOOL)shouldSelectViewController:(UIViewController *)viewController {

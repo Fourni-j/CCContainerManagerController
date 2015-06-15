@@ -31,6 +31,10 @@
  */
 @property (nonatomic) NSUInteger selectedIndex;
 
+/**
+ *  The color of the selection line on tab bar
+ */
+@property (nonatomic, strong) UIColor *selectedLineColor;
 
 /**
  *  The CCContainerManagerController's delegate object
