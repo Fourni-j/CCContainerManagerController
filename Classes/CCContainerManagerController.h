@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCContainerStyle.h"
 
 @class CCContainerManagerController;
 
@@ -42,6 +43,11 @@
 @property (nonatomic, strong) UIColor *selectedLineColor;
 
 /**
+ *  Use a CCCOntainerStyle to personalize CCContainerViewController like colors, size of the menu animations...
+ */
+@property (nonatomic, strong) CCContainerStyle *containerStyle;
+
+/**
  *  The CCContainerManagerController's delegate object
  */
 @property (nonatomic, weak) id<CCContainerManagerDelegate>delegate;
@@ -61,5 +67,14 @@
  *  @param animate will animate if YES
  */
 - (void)moveLineToSelectedTabBarItem:(BOOL)animate;
+
+/**
+ *  return the button's frame for the specified index
+ *  usefull to show popovers
+ *  @param index index of the barItem
+ *  
+ *  @return frame of the bar item
+ */
+- (CGRect)frameFormBarItemAtIndex:(NSInteger)index;
 
 @end

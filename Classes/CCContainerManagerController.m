@@ -120,6 +120,18 @@
     }
 }
 
+- (CGRect)frameFormBarItemAtIndex:(NSInteger)index
+{
+    if([self.actualController isKindOfClass:[CCTabBarController class]])
+    {
+        return [(CCTabBarController *)self.actualController frameForTabBarItemAtIndex:index];
+    }
+    else
+    {
+        return [(CCContainerViewController *)self.actualController frameForTabBarItemAtIndex:index];
+    }
+}
+
 - (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
     [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
     

@@ -20,6 +20,7 @@
 		56920BD81B2EFE0000A44296 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 56920BD51B2EFE0000A44296 /* user.png */; };
 		56D8CC761B2EFA28009F809C /* CCContainerManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8CC731B2EFA28009F809C /* CCContainerManagerController.m */; };
 		56D8CC771B2EFA28009F809C /* CCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8CC751B2EFA28009F809C /* CCTabBarController.m */; };
+		A478EDBB1B2F1FC400F6914F /* CCContainerStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = A478EDBA1B2F1FC400F6914F /* CCContainerStyle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		56D8CC731B2EFA28009F809C /* CCContainerManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCContainerManagerController.m; sourceTree = "<group>"; };
 		56D8CC741B2EFA28009F809C /* CCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTabBarController.h; sourceTree = "<group>"; };
 		56D8CC751B2EFA28009F809C /* CCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTabBarController.m; sourceTree = "<group>"; };
+		A478EDB91B2F1FC400F6914F /* CCContainerStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCContainerStyle.h; sourceTree = "<group>"; };
+		A478EDBA1B2F1FC400F6914F /* CCContainerStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCContainerStyle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				56D8CC731B2EFA28009F809C /* CCContainerManagerController.m */,
 				56D8CC741B2EFA28009F809C /* CCTabBarController.h */,
 				56D8CC751B2EFA28009F809C /* CCTabBarController.m */,
+				A478EDB91B2F1FC400F6914F /* CCContainerStyle.h */,
+				A478EDBA1B2F1FC400F6914F /* CCContainerStyle.m */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -320,6 +325,7 @@
 				568FF5871B2EF8C70045C4E8 /* ViewController.m in Sources */,
 				56D8CC761B2EFA28009F809C /* CCContainerManagerController.m in Sources */,
 				568FF5841B2EF8C70045C4E8 /* AppDelegate.m in Sources */,
+				A478EDBB1B2F1FC400F6914F /* CCContainerStyle.m in Sources */,
 				56D8CC771B2EFA28009F809C /* CCTabBarController.m in Sources */,
 				568FF5811B2EF8C70045C4E8 /* main.m in Sources */,
 			);
