@@ -20,7 +20,6 @@
 		56920BD81B2EFE0000A44296 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 56920BD51B2EFE0000A44296 /* user.png */; };
 		56D8CC761B2EFA28009F809C /* CCContainerManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8CC731B2EFA28009F809C /* CCContainerManagerController.m */; };
 		56D8CC771B2EFA28009F809C /* CCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D8CC751B2EFA28009F809C /* CCTabBarController.m */; };
-		5F2F6DB2B8A213347F11386C /* libPods-CCContainerManagerControllerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F881F8FE68C3B12455E95E6 /* libPods-CCContainerManagerControllerDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F2F6DB2B8A213347F11386C /* libPods-CCContainerManagerControllerDemo.a in Frameworks */,
 				0A30CDC8FEB48246B4647CFA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

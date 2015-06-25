@@ -15,8 +15,6 @@
 
 @property (strong, nonatomic) UIViewController *actualController;
 
-@property (nonatomic) BOOL  isCompact;
-
 @end
 
 @implementation CCContainerManagerController
@@ -44,7 +42,9 @@
         container.delegate = self;
         if(_containerStyle) container.containerStyle = _containerStyle;
         [container setViewControllers:viewControllers];
+        container.forceSelection = YES;
         [container setSelectedIndex:index];
+        container.forceSelection = NO;
         _actualController = container;
     }
 }
@@ -82,7 +82,7 @@
 - (instancetype)initWithTraitCollection:(UITraitCollection *)traitCollection {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        self.isCompact = (traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact);
+        _isCompact = (traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact);
     }
     return self;
     
@@ -149,10 +149,14 @@
     
     if (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassUnspecified)
         return;
-    self.isCompact = (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact);
+    _isCompact = (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact);
     [self removeActualInterface];
     [self buildInterfaceForTabBar:self.isCompact];
     [self addActualInterface];
+    if(_delegate && [_delegate respondsToSelector:@selector(containerManager:didTransionInCompactMode:)])
+    {
+        [_delegate containerManager:self didTransionInCompactMode:_isCompact];
+    }
 }
 
 

@@ -17,9 +17,16 @@
 
 - (void)containerManager:(CCContainerManagerController *)containerManagerController didSelectViewController:(UIViewController *)viewController;
 
+- (void)containerManager:(CCContainerManagerController *)containerManagerController didTransionInCompactMode:(BOOL)isCompact;
+
 @end
 
 @interface CCContainerManagerController : UIViewController
+
+/**
+ *  Tel if the interface is in compact mode or not
+ */
+@property (nonatomic, readonly) BOOL isCompact;
 
 /**
  *  An array of the root view controllers displayed bu the tab bar interface

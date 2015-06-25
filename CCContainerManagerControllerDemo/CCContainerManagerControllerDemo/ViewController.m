@@ -21,7 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
 
+
+- (IBAction)open:(id)sender
+{
     UIViewController *vc1 = [[UIViewController alloc] init];
     CCBarItem *item1 = [[CCBarItem alloc] initWithTitle:@"vc1" image:[UIImage imageNamed:@"user"]];
     UITabBarItem *barItem1 = [[UITabBarItem alloc] initWithTitle:@"vc1" image:[UIImage imageNamed:@"user"] selectedImage:nil];
@@ -55,11 +59,30 @@
     [containerManagerController setSelectedLineColor:[UIColor blueColor]];
     [containerManagerController setViewControllers:[[NSArray alloc] initWithObjects:vc1, vc2, vc3, nil]];
     [containerManagerController setSelectedIndex:0];
-        
-    [self addChildViewController:containerManagerController];
-    [self.view addSubview:containerManagerController.view];
     
+    [self presentViewController:containerManagerController animated:YES completion:nil];
 }
+
+- (IBAction)openModal:(id)sender
+{
+    UIViewController *ctrl = [[UIViewController alloc] init];
+    ctrl.view.backgroundColor = [UIColor blueColor];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ctrl];
+    
+    ctrl.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(close)];
+    
+    
+    nav.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)close
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
