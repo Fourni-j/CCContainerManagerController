@@ -19,6 +19,8 @@
 
 - (void)containerManager:(CCContainerManagerController *)containerManagerController didTransionInCompactMode:(BOOL)isCompact;
 
+- (void)containerManagerDidSelectBottomMessage:(CCContainerManagerController *)containerManagerController;
+
 @end
 
 @interface CCContainerManagerController : UIViewController
@@ -92,5 +94,22 @@
  *  @return the view
  */
 - (UIView *)viewForTabAtIndex:(NSUInteger)index;
+
+#pragma mark - Bottom Message
+
+/**
+ *  Will show the message at the bottom of the screen under the detail view
+ *
+ *  @param message message to display
+ *  @param animate will animate the screen to show the message
+ */
+- (void)showBottomMessage:(NSAttributedString *)message animated:(BOOL)animate;
+
+/**
+ *  Will hide the current message showing at the bottom of the screen
+ *
+ *  @param animate will animate the screen to hide the message
+ */
+- (void)hideBottomMessageAnimated:(BOOL)animate;
 
 @end
