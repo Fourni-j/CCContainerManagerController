@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) UIViewController *actualController;
 @property (nonatomic, weak) UILabel *bottomMessageLabel;
+@property (nonatomic) BOOL transitioning;
 
 @end
 
@@ -304,15 +305,32 @@
 
 - (void)updateFrames
 {
-    if(_actualController) _actualController.view.frame = [self frameForActualController];
+    if(_actualController)
+    {
+        _actualController.view.frame = [self frameForActualController];
+        [_actualController.view layoutIfNeeded];
+    }
     if(_bottomMessageLabel) _bottomMessageLabel.frame = [self frameForBottomMessage];
 }
 
 - (void)buildInterfaceForTabBar:(BOOL)forTabBar {
     
-    NSArray *viewControllers = (_actualController) ? [self.viewControllers copy] : nil;
+    NSArray *tmpViewControllers = (_actualController) ? [self.viewControllers copy] : nil;
+    NSArray *viewControllers = nil;
+    
     NSInteger index = (_actualController) ? self.selectedIndex : 0;
     _actualController = nil;
+    
+    if(_transitioning
+       && _delegate
+       && [_delegate respondsToSelector:@selector(viewControllersForContainerManager:inCompactMode:withViewControllers:)])
+    {
+        viewControllers = [_delegate viewControllersForContainerManager:self inCompactMode:_isCompact withViewControllers:tmpViewControllers];
+    }
+    else
+    {
+        viewControllers = tmpViewControllers;
+    }
     
     if (forTabBar)
     {
@@ -373,6 +391,7 @@
     
     if (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassUnspecified)
         return;
+    _transitioning = YES;
     _isCompact = (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact);
     [self removeActualInterface];
     [self buildInterfaceForTabBar:self.isCompact];
@@ -381,6 +400,7 @@
     {
         [_delegate containerManager:self didTransionInCompactMode:_isCompact];
     }
+    _transitioning = NO;
 }
 
 

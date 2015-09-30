@@ -18,6 +18,7 @@
 - (void)containerManager:(CCContainerManagerController *)containerManagerController didSelectViewController:(UIViewController *)viewController;
 
 - (void)containerManager:(CCContainerManagerController *)containerManagerController didTransionInCompactMode:(BOOL)isCompact;
+- (NSArray *)viewControllersForContainerManager:(CCContainerManagerController *)containerManagerController inCompactMode:(BOOL)isCompact withViewControllers:(NSArray *)viewControllers;
 
 - (void)containerManagerDidSelectBottomMessage:(CCContainerManagerController *)containerManagerController;
 
