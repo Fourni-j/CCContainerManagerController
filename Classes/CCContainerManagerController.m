@@ -42,7 +42,6 @@
         _isCompact = (traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact);
     }
     return self;
-    
 }
 
 #pragma mark - View Life Cycle
@@ -391,6 +390,9 @@
     
     if (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassUnspecified)
         return;
+    if((newCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) == _isCompact)
+        return;
+    
     _transitioning = YES;
     _isCompact = (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact);
     [self removeActualInterface];
